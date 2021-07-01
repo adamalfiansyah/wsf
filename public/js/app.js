@@ -1842,6 +1842,10 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+document.getElementById('selectFile').onchange = function () {
+  document.getElementById('formUpload').submit();
+};
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
