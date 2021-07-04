@@ -1842,8 +1842,25 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-document.getElementById('selectFile').onchange = function () {
-  document.getElementById('formUpload').submit();
+var selectFile = document.getElementById('selectFile');
+var formUpload = document.getElementById('formUpload');
+var copyBtn = document.getElementById('copyBtn');
+var copyUrl = document.getElementById('copyUrl');
+
+if (selectFile) {
+  selectFile.onchange = function () {
+    formUpload.submit();
+  };
+}
+
+copyBtn.onclick = function () {
+  //select text kemudian lakukan copy
+  copyUrl.select();
+  document.execCommand('copy'); //Copied
+
+  copyBtn.innerHTML = 'Copied';
+  copyBtn.classList.remove('btn-outline-secondary');
+  copyBtn.classList.add('btn-outline-success');
 };
 
 /***/ }),

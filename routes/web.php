@@ -23,3 +23,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::post('/uploads', [FileController::class, 'uploads'])->name('uploads');
+Route::get('/files/{file}', [FileController::class, 'files'])->name('files');
+Route::get('/downloads/{file}', [FileController::class, 'downloads'])->name('downloads');
